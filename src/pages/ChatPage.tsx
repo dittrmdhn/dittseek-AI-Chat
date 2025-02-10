@@ -132,7 +132,11 @@ const ChatPage = () => {
 						value={messageInput}
 						onChange={(e) => setMessageInput(e.target.value)}
 					/>
-					<Button onClick={handleSubmit} type="button">
+					<Button
+						disabled={!messageInput || streamedMessage !== ""}
+						onClick={handleSubmit}
+						type="button"
+					>
 						Send
 					</Button>
 				</div>

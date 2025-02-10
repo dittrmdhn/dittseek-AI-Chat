@@ -131,7 +131,11 @@ export const ChatSidebar: FC<ChatSidebarProps> = ({
 											<Link to={`/thread/${thread.id}`}>
 												<SidebarMenuButton
 													isActive={thread.id === activeThread}
-													className="text-white hover:text-gray-400"
+													className={`${
+														thread.id === activeThread
+															? " text-black dark:bg-white dark:text-black"
+															: "text-white hover:text-gray-400"
+													}`}
 												>
 													{compact ? "💬" : thread.title}
 												</SidebarMenuButton>
